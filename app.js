@@ -6,8 +6,10 @@ const connectionManager = require('./connection')
 const indexRouter = require('./routes/index');
 const tradesRouter = require('./routes/trades');
 
+
 const app = express();
 connectionManager.getConnection();
+
 
 // view engine setup
 app.set('view engine', 'jade');
@@ -19,6 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/trades', tradesRouter);
-app.use('/', indexRouter);
 
+app.listen(8000, ()=>{
+    console.log('Server listening on 8000')
+})
 module.exports = app;

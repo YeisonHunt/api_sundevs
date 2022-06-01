@@ -2,10 +2,8 @@
 const {
   Model
 } = require('sequelize');
-
-// const sequelize = new Sequelize("sqlite::memory:");
 module.exports = (sequelize, DataTypes) => {
-  class Trades extends Model {
+  class Contact extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -15,16 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Trades.init({
-    type: DataTypes.STRING,
-    user_id: DataTypes.STRING,
-    symbol: DataTypes.STRING,
-    shares: DataTypes.INTEGER,
-    price: DataTypes.INTEGER,
-    timestamp: DataTypes.INTEGER
+  Contact.init({
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    email: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Trades',
+    modelName: 'Contact',
   });
-  return Trades;
+  return Contact;
 };
