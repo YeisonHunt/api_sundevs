@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0410" tests="16" failures="2">
+  <testsuite name="Root Suite" timestamp="2022-06-01T14:36:41" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="stock_trades_api_hard" timestamp="2022-06-01T14:36:41" tests="16" file="/home/yeison/Training/762ae95b-f5bf-4936-b0c6-37092dced81f/test/index.spec.js" time="0.0410" failures="2">
+    <testcase name="stock_trades_api_hard should create a new trade of buy type" time="0.0390" classname="should create a new trade of buy type">
+      <failure message="expected { Object (_events, _eventsCount, ...) } to have status code 201 but got 200" type="AssertionError"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 201 but got 200
+    at Context.<anonymous> (test/index.spec.js:73:30)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)]]></failure>
+    </testcase>
+    <testcase name="stock_trades_api_hard &quot;after each&quot; hook for &quot;should create a new trade of buy type&quot;" time="0.0020" classname="&quot;after each&quot; hook for &quot;should create a new trade of buy type&quot;">
+      <failure message="SQLITE_ERROR: no such table: Trades" type="SequelizeDatabaseError"><![CDATA[Error
+    at Database.<anonymous> (node_modules/sequelize/lib/dialects/sqlite/query.js:179:27)
+    at /home/yeison/Training/762ae95b-f5bf-4936-b0c6-37092dced81f/node_modules/sequelize/lib/dialects/sqlite/query.js:177:50
+    at new Promise (<anonymous>)
+    at Query.run (node_modules/sequelize/lib/dialects/sqlite/query.js:177:12)
+    at /home/yeison/Training/762ae95b-f5bf-4936-b0c6-37092dced81f/node_modules/sequelize/lib/sequelize.js:311:28
+    at async Function.destroy (node_modules/sequelize/lib/model.js:1798:16)
+    at async SequelizeConnection.clearDatabase (lib/sequelize.connection.js:30:9)
+    at async Context.<anonymous> (test/index.spec.js:64:9)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

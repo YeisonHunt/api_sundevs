@@ -21,7 +21,17 @@ module.exports = (sequelize, DataTypes) => {
     symbol: DataTypes.STRING,
     shares: DataTypes.INTEGER,
     price: DataTypes.INTEGER,
-    timestamp: DataTypes.INTEGER
+    timestamp: DataTypes.INTEGER,
+    createdAt: {
+      allowNull: true,
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    },
+    updatedAt: {
+      allowNull: true,
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    }
   }, {
     sequelize,
     modelName: 'Trades',

@@ -24,17 +24,19 @@ router.post('/', (req, res) => {
         return res.status(400).send('Invalid shares');
     }
 
+    console.log(req.body);
+
     return db.Trades.create({
         type,
         user_id,
         symbol,
         shares,
-        price
-    })
+        price,
+         })
         .then((trade) => {
             return res.status(201).send(trade);
         }).catch((err) => {
-            console.log('Error creating trade')
+            console.log('Error creating trade', JSON.stringify(err));
             return res.send(err);
         });
 
