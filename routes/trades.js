@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
         price,
          })
         .then((trade) => {
-            return res.status(201).send(trade);
+            return res.status(200).send(trade);
         }).catch((err) => {
             console.log('Error creating trade', JSON.stringify(err));
             return res.send(err);
